@@ -16,7 +16,7 @@ class _SecondOnboardingScreenState extends State<SecondOnboardingScreen> {
 
   navigateToRootPage() async {
     Get.offAll(const RootPage(), transition: Transition.cupertino);
-    Get.snackbar("Welcome to sneakers shop", "",
+    Get.snackbar("Welcome to  NIKE sneakers shop", "",
         duration: const Duration(seconds: 6),
         forwardAnimationCurve: Curves.bounceInOut,
         backgroundColor: Colors.grey.shade900,
