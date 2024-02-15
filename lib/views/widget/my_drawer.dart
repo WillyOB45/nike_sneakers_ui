@@ -29,9 +29,7 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             splashColor: Colors.grey,
-            onTap: () {
-              Get.to(const HomePage());
-            },
+            onTap: () {},
             leading: const Icon(Icons.home_sharp),
             title: Text(
               "H o m e",

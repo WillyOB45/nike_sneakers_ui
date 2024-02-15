@@ -14,6 +14,12 @@ class _RootPageState extends State<RootPage> {
 
   List<Widget> screens = [
     const HomePage(),
+    Container(
+      color: Colors.amber,
+    ),
+    Container(
+      color: Colors.amber,
+    )
   ];
 
   _navigateScreens(int index) {

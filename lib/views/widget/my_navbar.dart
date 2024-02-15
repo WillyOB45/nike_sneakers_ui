@@ -14,7 +14,6 @@ class MyNavBar extends StatelessWidget {
         letIndexChange: letIndexChange,
         index: index,
         onTap: onTap,
-        animationDuration: const Duration(seconds: 1),
         buttonBackgroundColor: Colors.grey,
         backgroundColor: Colors.grey.shade300,
         items: const [
