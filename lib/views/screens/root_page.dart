@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nike_sneakers_ui/views/widget/my_drawer.dart';
+import 'package:nike_sneakers_ui/views/screens/home_page.dart';
 import 'package:nike_sneakers_ui/views/widget/my_navbar.dart';
 
 class RootPage extends StatefulWidget {
@@ -11,22 +11,26 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   int currentIndex = 0;
+
+  List<Widget> screens = [
+    const HomePage(),
+  ];
+
+  _navigateScreens(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       bottomNavigationBar: MyNavBar(
-        onTap: (p0) {},
+        onTap: (p0) => _navigateScreens,
         index: currentIndex,
       ),
-      drawer: MyDrawer(),
-      body: Builder(builder: (context) {
-        return GestureDetector(
-            onTap: () {
-              Scaffold.of(context).openDrawer();
-            },
-            child: Center(child: Icon(Icons.card_travel)));
-      }),
+      body: screens[currentIndex],
     );
   }
 }

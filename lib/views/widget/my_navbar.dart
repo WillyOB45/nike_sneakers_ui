@@ -10,6 +10,7 @@ class MyNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
+        height: 50,
         letIndexChange: letIndexChange,
         index: index,
         onTap: onTap,
