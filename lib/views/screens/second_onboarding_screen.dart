@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nike_sneakers_ui/views/screens/root_page.dart';
 import 'package:nike_sneakers_ui/views/widget/my_button.dart';
+import 'package:lottie/lottie.dart';
 
 class SecondOnboardingScreen extends StatefulWidget {
   const SecondOnboardingScreen({super.key});
@@ -19,7 +20,7 @@ class _SecondOnboardingScreenState extends State<SecondOnboardingScreen> {
     Get.snackbar("Welcome to  NIKE sneakers shop", "",
         duration: const Duration(seconds: 6),
         forwardAnimationCurve: Curves.bounceInOut,
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: Colors.grey,
         colorText: Colors.white);
   }
 
@@ -36,10 +37,10 @@ class _SecondOnboardingScreenState extends State<SecondOnboardingScreen> {
               height: 80,
             ),
             // image
-            Image.asset(
-              "assets/nikelogo.png",
-              height: 100,
-              width: 300,
+            LottieBuilder.asset(
+              "assets/lottieimage.json",
+              height: 200,
+              width: 400,
             ),
             const SizedBox(
               height: 10,

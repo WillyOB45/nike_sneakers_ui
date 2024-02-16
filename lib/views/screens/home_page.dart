@@ -15,16 +15,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: const MyDrawer(),
-      backgroundColor: Colors.grey.shade300,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        child: DefaultTabController(
-          length: 4,
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        drawer: const MyDrawer(),
+        backgroundColor: Colors.grey.shade300,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
-            // physics: NeverScrollableScrollPhysics(),
+            physics: const ScrollPhysics(),
             child: Column(
               children: [
                 const SizedBox(
