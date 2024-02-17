@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nike_sneakers_ui/views/screens/home_page.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});

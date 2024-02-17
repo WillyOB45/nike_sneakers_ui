@@ -16,147 +16,141 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        drawer: const MyDrawer(),
-        backgroundColor: Colors.grey.shade300,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child: SingleChildScrollView(
+        length: 4,
+        child: Scaffold(
+          backgroundColor: Colors.grey.shade300,
+          drawer: const MyDrawer(),
+          body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             physics: const ScrollPhysics(),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 30,
-                ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 20,
+                  ),
 
-                // drawer and notifications icon
-                Row(
-                  children: [
-                    Builder(builder: (context) {
-                      return GestureDetector(
-                          onTap: () {
-                            Scaffold.of(context).openDrawer();
-                          },
-                          child: SquareTile(
-                            icon: Icons.sort,
-                            color: Colors.white,
-                            iconcolor: Colors.black,
-                            iconsize: 35,
-                          ));
-                    }),
-                    const SizedBox(
-                      width: 250,
-                    ),
-                    SquareTile(
-                      iconcolor: Colors.black,
-                      iconsize: 35,
-                      icon: Icons.shopping_cart_checkout,
-                      color: Colors.white,
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-
-                //heading
-                Container(
-                  alignment: AlignmentDirectional.topStart,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  // menu icon
+                  Row(
                     children: [
-                      Text(
-                        "Explore New",
-                        style: GoogleFonts.bebasNeue(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: (40)),
-                        textAlign: TextAlign.start,
-                      ),
+                      Builder(builder: (context) {
+                        return GestureDetector(
+                          onTap: () => Scaffold.of(context).openDrawer,
+                          child: SquareTile(
+                              icon: Icons.sort,
+                              color: Colors.white,
+                              iconcolor: Colors.black,
+                              iconsize: (35)),
+                        );
+                      }),
                       const SizedBox(
-                        height: 3,
+                        width: 250,
                       ),
-                      Text(
-                        "Shoes",
-                        style: GoogleFonts.bebasNeue(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: (40)),
-                        textAlign: TextAlign.start,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-
-                      // searchbar
-                      Row(
-                        children: [
-                          const SizedBox(
-                            width: 300,
-                            child: MySearchBar(
-                              text: "Search for something...",
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          SquareTile(
-                              iconsize: 45,
-                              iconcolor: Colors.white,
-                              icon: Icons.share_outlined,
-                              color: Colors.black),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      //tabar lists
-                      SizedBox(
-                        child: TabBar(
-                            indicator: BoxDecoration(
-                                color: Colors.grey.shade700,
-                                borderRadius: BorderRadius.circular(20)),
-                            unselectedLabelColor: Colors.grey,
-                            indicatorColor: Colors.grey,
-                            tabs: const [
-                              Tab(
-                                text: "nike",
-                              ),
-                              Tab(
-                                text: "nike",
-                              ),
-                              Tab(
-                                text: "nike",
-                              ),
-                              Tab(
-                                text: "nike",
-                              ),
-                            ]),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const SizedBox(
-                        height: 1300,
-                        width: 500,
-                        child: TabBarView(children: [
-                          MyGridTile(),
-                          MyGridTile(),
-                          MyGridTile(),
-                          MyGridTile(),
-                        ]),
-                      )
+                      SquareTile(
+                          icon: Icons.shopping_cart_checkout,
+                          color: Colors.white,
+                          iconcolor: Colors.black,
+                          iconsize: (35))
                     ],
                   ),
-                ),
-              ],
+                  const SizedBox(
+                    height: 20,
+                  ),
+
+                  // heading
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Explore New",
+                          style: GoogleFonts.bebasNeue(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: (40)),
+                          textAlign: TextAlign.start,
+                        ),
+                        const SizedBox(
+                          height: 1,
+                        ),
+                        Text(
+                          "Shoes",
+                          style: GoogleFonts.bebasNeue(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: (40)),
+                          textAlign: TextAlign.start,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+
+                  // search bar
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 300,
+                        child: MySearchBar(
+                          text: "Search for something...",
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      SquareTile(
+                          iconsize: 45,
+                          iconcolor: Colors.white,
+                          icon: Icons.share_outlined,
+                          color: Colors.black),
+                    ],
+                  ),
+
+                  const SizedBox(
+                    height: 10,
+                  ),
+
+                  // tabar list
+                  TabBar(
+                      labelColor: Colors.white,
+                      indicatorSize: TabBarIndicatorSize.tab,
+                      indicator: BoxDecoration(
+                          color: Colors.grey.shade700,
+                          borderRadius: BorderRadius.circular(20)),
+                      unselectedLabelColor: Colors.grey,
+                      indicatorColor: Colors.grey,
+                      tabs: const [
+                        Tab(
+                          text: "nike",
+                        ),
+                        Tab(
+                          text: "nike",
+                        ),
+                        Tab(
+                          text: "nike",
+                        ),
+                        Tab(
+                          text: "nike",
+                        ),
+                      ]),
+                  const SizedBox(
+                    height: 20,
+                  ),
+
+                  //tabar view
+                  SizedBox(
+                      height: 900,
+                      width: 500,
+                      child: TabBarView(children: [MyGridTile()]))
+                ],
+              ),
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

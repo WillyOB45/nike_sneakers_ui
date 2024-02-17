@@ -40,3 +40,65 @@ class _RootPageState extends State<RootPage> {
     );
   }
 }
+
+// DefaultTabController(
+//       length: 4,
+//       child: Scaffold(
+        
+//         backgroundColor: Colors.grey.shade300,
+//         body: Padding(
+//           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+//           child: SingleChildScrollView(
+//             scrollDirection: Axis.vertical,
+//             physics: const ScrollPhysics(),
+//             child: Column(
+//               children: [
+//                 const SizedBox(
+//                   height: 30,
+//                 ),
+
+                
+//                 const SizedBox(
+//                   height: 20,
+//                 ),
+
+//                 //heading
+//                 Container(
+// //                   alignment: AlignmentDirectional.topStart,
+//                   child: Column(
+//                     mainAxisAlignment: MainAxisAlignment.start,
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+                      
+//                       const SizedBox(
+//                         height: 10,
+//                       ),
+
+//                       // searchbar
+                      
+//                       const SizedBox(
+//                         height: 10,
+//                       ),
+//                       //tabar lists
+//                       SizedBox(
+//                         height: 70,
+//                         width: 500,
+                        
+//                       ),
+//                       const SizedBox(
+//                         height: 10,
+//                       ),
+                     
+//                     ],
+//                   ),
+//                 ),
+                 
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+

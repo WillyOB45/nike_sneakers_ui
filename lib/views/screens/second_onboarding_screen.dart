@@ -37,10 +37,12 @@ class _SecondOnboardingScreenState extends State<SecondOnboardingScreen> {
               height: 80,
             ),
             // image
-            LottieBuilder.asset(
-              "assets/lottieimage.json",
-              height: 200,
-              width: 400,
+            SizedBox(
+              child: LottieBuilder.asset(
+                "assets/lottieimage.json",
+                height: 200,
+                width: 400,
+              ),
             ),
             const SizedBox(
               height: 10,
