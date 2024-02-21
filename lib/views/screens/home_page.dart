@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nike_sneakers_ui/models/shoemodal.dart';
+import 'package:nike_sneakers_ui/views/screens/shoe_page.dart';
 import 'package:nike_sneakers_ui/views/widget/gridtiles.dart';
 import 'package:nike_sneakers_ui/views/widget/my_drawer.dart';
 import 'package:nike_sneakers_ui/views/widget/my_searchbar.dart';
@@ -20,11 +23,11 @@ class _HomePageState extends State<HomePage> {
         child: Scaffold(
           backgroundColor: Colors.grey.shade300,
           drawer: const MyDrawer(),
-          body: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            physics: const ScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          body: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            child: Container(
+              height: double.infinity,
+              width: double.infinity,
               child: Column(
                 children: [
                   const SizedBox(
@@ -36,7 +39,11 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Builder(builder: (context) {
                         return GestureDetector(
-                          onTap: () => Scaffold.of(context).openDrawer,
+                          onTap: () {
+                            setState(() {
+                              Scaffold.of(context).openDrawer();
+                            });
+                          },
                           child: SquareTile(
                               icon: Icons.sort,
                               color: Colors.white,
@@ -143,10 +150,26 @@ class _HomePageState extends State<HomePage> {
                   ),
 
                   //tabar view
-                  SizedBox(
-                      height: 900,
-                      width: 500,
-                      child: TabBarView(children: [MyGridTile()]))
+                  Expanded(
+                    child: SizedBox(
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.to(ShoePage());
+                        },
+                        child: TabBarView(
+                          children: [
+                            MyGridTile(),
+                            MyGridTile(),
+                            MyGridTile(),
+                            MyGridTile(),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                 ],
               ),
             ),
