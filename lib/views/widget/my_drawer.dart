@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
+import 'package:nike_sneakers_ui/views/screens/home_page.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
 
+  @override
+  State<MyDrawer> createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -27,7 +34,11 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             splashColor: Colors.grey,
-            onTap: () {},
+            onTap: () {
+              setState(() {
+                Get.to(const HomePage());
+              });
+            },
             leading: const Icon(Icons.home_sharp),
             title: Text(
               "H o m e",

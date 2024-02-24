@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nike_sneakers_ui/controller/shoecontroller.dart';
-import 'package:nike_sneakers_ui/models/shoemodal.dart';
 
 class MyGridTile extends StatefulWidget {
   const MyGridTile({
