@@ -20,8 +20,7 @@ class _FirstOnboardingScreenState extends State<FirstOnboardingScreen> {
 
   navigateToNext() async {
     await Future.delayed(const Duration(seconds: 10));
-    Get.offAll(const SecondOnboardingScreen(),
-        transition: Transition.cupertino);
+    Get.offAll(const SecondOnboardingScreen(), transition: Transition.fadeIn);
   }
 
   @override

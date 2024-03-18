@@ -38,15 +38,19 @@ class _SecondOnboardingScreenState extends State<SecondOnboardingScreen> {
             ),
             // image
             SizedBox(
-              child: LottieBuilder.asset(
-                "assets/lottieimage.json",
-                height: 200,
-                width: 400,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: LottieBuilder.asset(
+                  "assets/lottieimage.json",
+                  height: 200,
+                  width: 400,
+                ),
               ),
             ),
             const SizedBox(
               height: 10,
             ),
+
             // heading
             Text(
               "Just Do It",
@@ -67,7 +71,10 @@ class _SecondOnboardingScreenState extends State<SecondOnboardingScreen> {
             const SizedBox(
               height: 30,
             ),
-            MyButton(onTap: () => navigateToRootPage(), text: "Shop Here"),
+            MyButton(
+                onTap: () => Get.to(navigateToRootPage(),
+                    transition: Transition.downToUp),
+                text: "Shop Here"),
           ],
         ),
       ),

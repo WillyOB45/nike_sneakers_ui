@@ -3,7 +3,6 @@ import 'package:nike_sneakers_ui/models/shoemodal.dart';
 
 class ShoeController extends GetxController {
   RxList shoes = <Shoe>[].obs;
-  dynamic get shoelists => shoes;
 
   @override
   void onInit() {
